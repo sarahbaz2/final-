@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Visualization Project</title>
+
+    <style>
+        /* Netflix-Themed Background */
+body {
+    margin: 0;
+    padding: 30px;
+    font-family: Arial, sans-serif;
+
+    /* Netflix Red → Dark Black diagonal gradient */
+    background: linear-gradient(135deg, #E50914 0%, #3b0c0c 40%, #141414 100%);
+
+    color: #f5f5f5; /* light text on dark background */
+    min-height: 100vh;
+}
+
+/* Stylish Netflix Navigation Bar */
+nav {
+    background: rgba(20, 20, 20, 0.6); /* semi-transparent dark */
+    backdrop-filter: blur(6px); /* glassmorphism effect */
+    padding: 15px 25px;
+    border-radius: 10px;
+
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+
+    box-shadow: 0 4px 25px rgba(247, 244, 244, 0.4);
+    margin-bottom: 35px;
+}
+
+nav a {
+    color: #e4e2e2;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 17px;
+    padding-bottom: 4px;
+}
+
+nav a:hover {
+    color: #E50914;
+    border-bottom: 2px solid #E50914;
+    transition: 0.2s ease-in-out;
+}
+
+/* Center the main title */
+h1 {
+    text-align: center;
+    color: #e9e3e3;
+}
+
+/* Extra polish for content blocks */
+section, .content-box {
+    background: rgba(226, 223, 223, 0.06);
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(4px);
+    margin-bottom: 25px;
+}
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <a href="index.html">Visualization</a>
+        <a href="documentation.html">Documentation</a>
+    </nav>
+
+    <h1>Netflix Movies vs TV Shows Visualization</h1>
+    <p style="text-align:center; max-width:700px; margin:auto;">
+        This interactive visualization explores the Netflix titles dataset to answer the question:
+        <strong>"What type of content dominates Netflix — Movies or TV Shows?"</strong>
+    </p>
+
+    <!-- The chart -->
+    <div id="chart"></div>
+
+    <!-- Load D3 JS library -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <!-- script that builds the visualization -->
+    <script src="script.js"></script>
+    <h2 style="color:white; margin-top:60px;">Genre Popularity Over Time</h2>
+
+    <select id="genreDropdown" 
+            style="padding:10px; font-size:16px; margin-bottom:20px; border-radius:5px;">
+    </select>
+    
+    <div id="genreOverTime"></div>
+    <h2>Top Countries by Releases</h2>
+  <p>Interactive visualization to explore which countries released the most content on Netflix for a selected year.</p>
+  <p> Choose the year from the tooltip bellow</p>
+
+  <div id="viz3" style="margin-bottom: 150px;">
+  <select id="yearSelect"></select>
+  </div>
+
+  <div id="Vis4"></div>
+<h3 style="color:white;">
+    How does movie duration relate to its rating on Netflix?
+</h3>
+<div id="durationRatingViz"></div>
+</body>
+</html>
+
